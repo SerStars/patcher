@@ -71,6 +71,14 @@ func setIcons() {
 	}
 }
 
+func setVersion() {
+	logger.Debug("Setting app version...")
+
+	info["CFBundleShortVersionString"] = "222.1"
+
+	logger.Info("App version set.")
+}
+
 func setReactNavigationName() {
 	logger.Debug("Attempting to rename React Navigation...")
 	modulesPath := filepath.Join(directory, "Payload", "Discord.app", "assets", "_node_modules", ".pnpm")
