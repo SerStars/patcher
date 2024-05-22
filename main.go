@@ -45,7 +45,7 @@ func main() {
 			setFileAccess()
 			setAppName()
 			setIcons()
-			setVersion()
+			//setVersion()
 
 			saveInfo()
 			archive()
