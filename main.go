@@ -41,11 +41,6 @@ func main() {
 			loadInfo()
 
 			setReactNavigationName()
-			setSupportedDevices()
-			setFileAccess()
-			setAppName()
-			setIcons()
-			//setVersion()
 
 			saveInfo()
 			archive()
