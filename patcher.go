@@ -19,66 +19,6 @@ type Manifest struct {
 	Hashes map[string]string `json:"hashes"`
 }
 
-func setSupportedDevices() {
-	logger.Debug("Setting supported devices...")
-
-	delete(info, "UISupportedDevices")
-
-	logger.Info("Supported devices set.")
-}
-
-func setAppName() {
-	logger.Debug("Setting app name...")
-
-	info["CFBundleName"] = "Enmity"
-	info["CFBundleDisplayName"] = "Enmity"
-
-	logger.Info("App name set.")
-}
-
-func setFileAccess() {
-	logger.Debug("Setting file access...")
-
-	info["UISupportsDocumentBrowser"] = true
-	info["UIFileSharingEnabled"] = true
-
-	logger.Info("File access enabled.")
-}
-
-func setIcons() {
-	logger.Debug("Downloading app icons...")
-
-	icons := filepath.Join(assets, "icons.zip")
-	download("https://enmity-mod.github.io/assets/icons.zip", icons)
-
-	logger.Info("Downloaded app icons.")
-
-	logger.Debug("Applying app icons...")
-
-	info["CFBundleIcons"].(map[string]interface{})["CFBundlePrimaryIcon"].(map[string]interface{})["CFBundleIconName"] = "EnmityIcon"
-	info["CFBundleIcons"].(map[string]interface{})["CFBundlePrimaryIcon"].(map[string]interface{})["CFBundleIconFiles"] = []string{"EnmityIcon60x60"}
-	info["CFBundleIcons~ipad"].(map[string]interface{})["CFBundlePrimaryIcon"].(map[string]interface{})["CFBundleIconName"] = "EnmityIcon"
-	info["CFBundleIcons~ipad"].(map[string]interface{})["CFBundlePrimaryIcon"].(map[string]interface{})["CFBundleIconFiles"] = []string{"EnmityIcon60x60", "EnmityIcon76x76"}
-
-	zip := archiver.Zip{OverwriteExisting: true}
-	discord := filepath.Join(directory, "Payload", "Discord.app")
-
-	if err := zip.Unarchive(icons, discord); err == nil {
-		logger.Info("Applied app icons.")
-	} else {
-		logger.Errorf("Failed to apply app icons: %v", err)
-		exit()
-	}
-}
-
-//func setVersion() {
-//	logger.Debug("Setting app version...")
-//
-//	info["CFBundleShortVersionString"] = "222.1"
-//
-//	logger.Info("App version set.")
-//}
-
 func setReactNavigationName() {
 	logger.Debug("Attempting to rename React Navigation...")
 	modulesPath := filepath.Join(directory, "Payload", "Discord.app", "assets", "_node_modules", ".pnpm")
