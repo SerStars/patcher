@@ -19,14 +19,14 @@ type Manifest struct {
 
 func setReactNavigationName() {
 	logger.Debug("Attempting to rename React Navigation...")
-	modulesPath := filepath.Join(directory, "Payload", "Discord.app", "assets", "_node_modules", ".pnpm")
+	modulesPath := filepath.Join(directory, "Payload", "Rosiecord.app.app", "assets", "_node_modules", ".pnpm")
 
 	if exists, _ := exists(modulesPath); !exists {
 		logger.Debug("React Navigation does not exist, no need to rename it.")
 		return
 	}
 
-	manifestPath := filepath.Join(directory, "Payload", "Discord.app", "manifest.json")
+	manifestPath := filepath.Join(directory, "Payload", "Rosiecord.app", "manifest.json")
 
 	if exists, _ := exists(manifestPath); !exists {
 		logger.Debug("React Navigation does not exist, no need to rename it.")
