@@ -64,7 +64,7 @@ func loadInfo() {
 		return
 	}
 
-	path := filepath.Join(directory, "Payload", "Discord.app", "Info.plist")
+	path := filepath.Join(directory, "Payload", "Rosiecord.app", "Info.plist")
 	file, err := os.Open(path)
 
 	if err != nil {
@@ -80,7 +80,7 @@ func loadInfo() {
 }
 
 func saveInfo() {
-	path := filepath.Join(directory, "Payload", "Discord.app", "Info.plist")
+	path := filepath.Join(directory, "Payload", "Rosiecord.app", "Info.plist")
 	file, err := os.OpenFile(path, os.O_RDWR|os.O_TRUNC, 0600)
 
 	if err != nil {
