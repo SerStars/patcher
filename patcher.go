@@ -6,8 +6,6 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
-
-	"github.com/mholt/archiver"
 )
 
 type Manifest struct {
