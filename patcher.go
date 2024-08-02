@@ -45,7 +45,7 @@ func setFileAccess() {
 	logger.Info("File access enabled.")
 }
 
-func setIcons() {
+/*func setIcons() {
 	logger.Debug("Downloading app icons...")
 
 	icons := filepath.Join(assets, "icons.zip")
@@ -69,7 +69,7 @@ func setIcons() {
 		logger.Errorf("Failed to apply app icons: %v", err)
 		exit()
 	}
-}
+}*/
 
 func setReactNavigationName() {
 	logger.Debug("Attempting to rename React Navigation...")
