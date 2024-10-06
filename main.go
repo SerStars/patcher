@@ -45,6 +45,7 @@ func main() {
 			setFileAccess()
 			setAppName()
 			setIcons()
+			setProtocol()
 
 			saveInfo()
 			archive()
