@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	//"github.com/mholt/archiver"
+	"github.com/mholt/archiver"
 )
 
 type Manifest struct {
@@ -45,7 +45,7 @@ func setFileAccess() {
 	logger.Info("File access enabled.")
 }
 
-/*func setIcons() {
+func setIcons() {
 	logger.Debug("Downloading app icons...")
 
 	icons := filepath.Join(assets, "icons.zip")
@@ -69,7 +69,7 @@ func setFileAccess() {
 		logger.Errorf("Failed to apply app icons: %v", err)
 		exit()
 	}
-}*/
+}
 
 func setReactNavigationName() {
 	logger.Debug("Attempting to rename React Navigation...")
