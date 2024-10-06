@@ -44,7 +44,7 @@ func main() {
 			setSupportedDevices()
 			setFileAccess()
 			setAppName()
-			//setIcons()
+			setIcons()
 
 			saveInfo()
 			archive()
